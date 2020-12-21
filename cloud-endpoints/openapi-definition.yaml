@@ -4,7 +4,7 @@
     description: Sample API on Cloud Endpoints with a Cloud Run, Google App Engine and Cloud Function as
       backends.
     version: 1.0.0
-  host: gateway-6bpnwgtf6q-uc.a.run.app   #Replace with your gateway service name
+  host: jc-api   #Replace with your gateway service name
   schemes:
     - https
   produces:
@@ -15,7 +15,7 @@
         summary: Get an Employee
         operationId: getEmployee
         x-google-backend:
-          address: https://us-central1-endpoints-demo1.cloudfunctions.net/employee #Replace with Cloud Function URL
+          address: https://us-central1-jc-api-training.cloudfunctions.net/employee #Replace with Cloud Function URL
           protocol: h2
         parameters:
           - name: employee_id
@@ -45,7 +45,7 @@
         summary: Delete Employee using Google App Engine service.
         operationId: deleteEmployee
         x-google-backend:
-          address: https://endpoints-demo1.appspot.com  #Replace with your Google App Engine Service
+          address: https://jc-api-training.appspot.com  #Replace with your Google App Engine Service
           path_translation: APPEND_PATH_TO_ADDRESS
           jwt_audience: 499537266481-brju9v4qpvr611jmmbs2ujv9p5sb7ecf.apps.googleusercontent.com
           protocol: h2
@@ -71,7 +71,7 @@
         summary: Add Employee using Cloud Run Service
         operationId: add_update_employee
         x-google-backend:
-          address: https://employee-6bpnwgtf6q-uc.a.run.app   #Replace with your Cloud Run Service.
+          address: https://employee-svnsaz2xma-uc.a.run.app   #Replace with your Cloud Run Service.
           path_translation: APPEND_PATH_TO_ADDRESS
         parameters:
           - name: employee
